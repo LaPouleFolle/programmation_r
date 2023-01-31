@@ -5,8 +5,9 @@
  
  #Demande à l'utilisateur de saisir la valeur du montant de son horaire en brute
  
+brut_to_net1 <- function()  {
 salaire_brute <- as.numeric(readline())
-2500
+
 salaire_brute #Test d'affichage du salaire 
 
 prevoyance_complementaire <- 20
@@ -76,10 +77,54 @@ total_retenues
 
 salaire_net <- salaire_brute - total_retenues
 
-salaire_net 
+salaire_net
 
+return( salaire_net)}
+
+
+# Bon je refais l'exercice 
+
+brut_to_net1 <- function(salaire_brute) {
+  if (is.numeric(salaire_brute) == TRUE)
+  {
+      salaire_net <- salaire_brute - (salaire_brute * 0.22)
+
+  }else
+  {
+    print("ERROR")
+  }
+
+return(salaire_net)
+}
+
+#Test 
+class(brut_to_net1)
+
+brut_to_net1( salaire_brute = "fff")
+
+
+
+#Brute to net 2 
+
+brut_to_net2 <- function(salaire_brute, contrat)
+{if ( contrat =="cadre" ) 
+  salaire_net <- salaire_brute - (salaire_brute * 0.25)
+
+
+
+  else
+  salaire_net <- salaire_brute - salaire_brute * 0.22
+  
+  if(is.numeric(contrat))
       
+      print("Erreur")
+  else
+    print("Le type du contrat est correct")
+  
+return(salaire_net)
+  
+}
 
-
+brut_to_net2
 
  
